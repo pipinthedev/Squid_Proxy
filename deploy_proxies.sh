@@ -20,7 +20,6 @@ for ((i=0; i<COUNT; i++)); do
         --env USERNAME="$USERNAME" --env PASSWORD="$PASSWORD" --env PORT="$PORT" \
         my-squid-proxy
     echo "Deployed $NAME on port $PORT"
-    # Append proxy details to proxies.txt
     echo "$SERVER_IP:$PORT:$USERNAME:$PASSWORD" >> proxies.txt
 done
 
