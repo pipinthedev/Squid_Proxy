@@ -17,8 +17,8 @@ for ((i=0; i<COUNT; i++)); do
     PORT=$((START_PORT + i))
     NAME="proxy$((i+1))"
     docker run --name $NAME --detach --restart=always --publish $PORT:3128 \
-        --env USERNAME="$USERNAME" --env PASSWORD="$PASSWORD" --env PORT="$PORT" \
-        my-squid-proxy
+    --env USERNAME="$USERNAME" --env PASSWORD="$PASSWORD" --env PORT="$PORT" \
+    my-squid-proxy
     echo "Deployed $NAME on port $PORT"
     echo "$SERVER_IP:$PORT:$USERNAME:$PASSWORD" >> proxies.txt
 done
